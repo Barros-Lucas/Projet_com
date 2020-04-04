@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+
+<link href="style.css" rel="stylesheet">
+
+</head>
+<body>
+
+
+  <div class="card" id="card_front" style="width: 18rem;">
+    <!-- <img src="../images/img_moi_01.jpg" class="card-img-top" alt="img_moi_01.jpg"> -->
+    <img src="../images/moi.png" class="card-img-top" alt="img_moi_01.jpg">
+    <div class="card-body">
+      <h5 class="card-title">Entraînement</h5>
+      <hr>
+      <p class="card-text">Je m'appelle Lucas Barros</p>
+
+    </div>
+    <div class="card-footer text-center" style="">
+      <button type="button" onclick="reverseCard(0)" class="btn btn-danger" style="position: absolute;left:0">X</button>
+      <button type="button" onclick="" class="btn btn-dark" style="">Fin</button>
+      <button type="button" onclick="reverseCard(1)" class="btn btn-success" style="position: absolute;right:0">V</button>
+    </div>
+
+  </div>
+
+      <div class="card" id="card_back" style="width: 25rem;display:none">
+        <div class="card-header" style="">
+          <ul class="nav nav-tabs card-header-tabs" id="bologna-list" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" href="#description" role="tab" aria-controls="description" aria-selected="true">Description</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"  href="#analyse" role="tab" aria-controls="history" aria-selected="false">Analyse</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contexte" role="tab" aria-controls="deals" aria-selected="false">Contexte</a>
+            </li>
+          </ul>
+        </div>
+        <div class="card-body">
+          <h4 class="card-title">Entraînement</h4>
+          <h6 class="card-subtitle mb-2">Vrai</h6>
+
+           <div class="tab-content mt-3">
+            <div class="tab-pane active" id="description" role="tabpanel">
+              <p class="card-text">Effectivement je m'appelle Lucas</p>
+              <a href="#" class="btn btn-danger btn-sm">Question suivante</a>
+            </div>
+
+            <div class="tab-pane" id="analyse" role="tabpanel" aria-labelledby="analyse-tab">
+              <p class="card-text">Aucune analyse sur mon prénom </p>
+              <a href="#" class="btn btn-danger btn-sm">Question suivante</a>
+            </div>
+
+            <div class="tab-pane" id="contexte" role="tabpanel" aria-labelledby="contexte-tab">
+              <p class="card-text">Aucun contexte supplémrentaire</p>
+              <a href="#" class="btn btn-danger btn-sm">Question suivante</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+</body>
+<script type="text/javascript">
+  $('#bologna-list a').on('click', function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})
+
+function reverseCard(response){
+document.getElementById("card_front").style.display = "none";
+document.getElementById("card_back").style.display = "";
+console.log(response)
+}
+
+</script>
+</html>
